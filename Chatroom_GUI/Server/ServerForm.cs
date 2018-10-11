@@ -34,20 +34,40 @@ namespace Chatroom_GUI
 
         private void TcpServerStart()
         {
-            TcpListener tcpListener = new TcpListener(IPAddress.Any, 0);
+            TcpListener tcpListener = new TcpListener(IPAddress.Any, 5001);
             tcpListener.Start();
+            UpdateUI("Listening for TcpClients");
 
             while (true)
             {
                 TcpClient client = tcpListener.AcceptTcpClient(); // Thread will wait here until a client tries to connect.
-                Thread tcpHandlerThread = new Thread(() => TcpHandler(client)); // Give the client a thread.
+                UpdateUI("Connected!");
+                Thread tcpHandlerThread = new Thread(() => TcpHandler(client)); // Devote a thread to handle the actions of a client
                 tcpHandlerThread.Start(client);
             }
         }
 
-        private void TcpHandler(TcpClient client)
+        private void TcpHandler(Object client_)
         {
+            TcpClient client = (TcpClient)client_;
+            NetworkStream stream = client.GetStream(); // Make a stream for the server to listen to the client
+            byte[] byteMessage = new byte[1024];
+            stream.Read(byteMessage, 0, byteMessage.Length);
+            UpdateUI("New Message: " + Encoding.ASCII.GetString(byteMessage));
 
+            // Stay green bb
+            stream.Close();
+            client.Close();
+        }
+
+        private void UpdateUI(string incommingMessage)
+        {
+            Func<int> del = delegate ()
+            {
+                serverTextBox.AppendText(incommingMessage + System.Environment.NewLine); // this makes sense
+                return 0;
+            };
+            Invoke(del); // Idk why i make a delegate for it.
         }
 
         /* For learning purposes only
