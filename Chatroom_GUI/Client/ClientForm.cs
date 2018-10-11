@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Client
 {
-    public partial class Form1 : Form
+    public partial class ClientForm : Form
     {
-        public Form1()
+        public ClientForm()
         {
             InitializeComponent();
+        }
+
+        private void ClientForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bConnect_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

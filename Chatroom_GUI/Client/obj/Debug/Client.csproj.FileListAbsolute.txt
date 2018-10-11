@@ -1,0 +1,9 @@
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\bin\Debug\Client.exe.config
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\bin\Debug\Client.exe
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\bin\Debug\Client.pdb
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\obj\Debug\Client.ClientForm.resources
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\obj\Debug\Client.csproj.GenerateResource.cache
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\obj\Debug\Client.exe
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\obj\Debug\Client.pdb
