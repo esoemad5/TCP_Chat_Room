@@ -34,30 +34,35 @@
             // 
             // bStartServer
             // 
-            this.bStartServer.Location = new System.Drawing.Point(713, 12);
+            this.bStartServer.Location = new System.Drawing.Point(1070, 18);
+            this.bStartServer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bStartServer.Name = "bStartServer";
-            this.bStartServer.Size = new System.Drawing.Size(75, 23);
+            this.bStartServer.Size = new System.Drawing.Size(112, 35);
             this.bStartServer.TabIndex = 0;
             this.bStartServer.Text = "StartServer";
             this.bStartServer.UseVisualStyleBackColor = true;
+            this.bStartServer.Click += new System.EventHandler(this.bStartServer_Click);
             // 
             // serverTextBos
             // 
-            this.serverTextBos.Location = new System.Drawing.Point(12, 12);
+            this.serverTextBos.Location = new System.Drawing.Point(18, 18);
+            this.serverTextBos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.serverTextBos.Multiline = true;
             this.serverTextBos.Name = "serverTextBos";
-            this.serverTextBos.Size = new System.Drawing.Size(695, 426);
+            this.serverTextBos.Size = new System.Drawing.Size(1040, 653);
             this.serverTextBos.TabIndex = 1;
             // 
             // ServerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.serverTextBos);
             this.Controls.Add(this.bStartServer);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ServerForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.ServerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

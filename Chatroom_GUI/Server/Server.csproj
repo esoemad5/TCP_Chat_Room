@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F6FAB265-4814-43CD-9ABF-331D1CB83FEA}</ProjectGuid>
+    <ProjectGuid>{C3A8544F-3CA9-4EA6-AA50-E43441441E64}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Chatroom_GUI</RootNamespace>
     <AssemblyName>Chatroom_GUI</AssemblyName>

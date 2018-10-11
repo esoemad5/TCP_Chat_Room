@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Chatroom_GUI\Server.csproj", "{F6FAB265-4814-43CD-9ABF-331D1CB83FEA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{1CF5B7F7-621A-4E1A-9E3B-79D0A76573ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{C3A8544F-3CA9-4EA6-AA50-E43441441E64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F6FAB265-4814-43CD-9ABF-331D1CB83FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6FAB265-4814-43CD-9ABF-331D1CB83FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6FAB265-4814-43CD-9ABF-331D1CB83FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6FAB265-4814-43CD-9ABF-331D1CB83FEA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1CF5B7F7-621A-4E1A-9E3B-79D0A76573ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1CF5B7F7-621A-4E1A-9E3B-79D0A76573ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CF5B7F7-621A-4E1A-9E3B-79D0A76573ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CF5B7F7-621A-4E1A-9E3B-79D0A76573ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3A8544F-3CA9-4EA6-AA50-E43441441E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A8544F-3CA9-4EA6-AA50-E43441441E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A8544F-3CA9-4EA6-AA50-E43441441E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A8544F-3CA9-4EA6-AA50-E43441441E64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
