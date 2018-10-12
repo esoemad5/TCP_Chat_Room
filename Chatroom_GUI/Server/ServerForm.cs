@@ -47,9 +47,9 @@ namespace Chatroom_GUI
             }
         }
 
-        private void TcpHandler(Object client_)
+        private void TcpHandler(TcpClient client)
         {
-            TcpClient client = (TcpClient)client_;
+            //TcpClient client = (TcpClient)client_;
             NetworkStream stream = client.GetStream(); // Make a stream for the server to listen to the client
             byte[] byteMessage = new byte[1024];
             stream.Read(byteMessage, 0, byteMessage.Length);
@@ -60,11 +60,11 @@ namespace Chatroom_GUI
             client.Close();
         }
 
-        private void UpdateUI(string incommingMessage)
+        private void UpdateUI(string message)
         {
             Func<int> del = delegate ()
             {
-                serverTextBox.AppendText(incommingMessage + System.Environment.NewLine); // this makes sense
+                serverTextBox.AppendText(message + System.Environment.NewLine); // this makes sense
                 return 0;
             };
             Invoke(del); // Idk why i make a delegate for it.

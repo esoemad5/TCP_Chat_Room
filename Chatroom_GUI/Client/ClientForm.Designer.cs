@@ -38,12 +38,12 @@
             this.clientTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.clientTextBox.Multiline = true;
             this.clientTextBox.Name = "clientTextBox";
-            this.clientTextBox.Size = new System.Drawing.Size(1105, 544);
+            this.clientTextBox.Size = new System.Drawing.Size(790, 474);
             this.clientTextBox.TabIndex = 0;
             // 
             // bConnect
             // 
-            this.bConnect.Location = new System.Drawing.Point(1134, 18);
+            this.bConnect.Location = new System.Drawing.Point(816, 18);
             this.bConnect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bConnect.Name = "bConnect";
             this.bConnect.Size = new System.Drawing.Size(112, 35);
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 737);
+            this.ClientSize = new System.Drawing.Size(935, 584);
             this.Controls.Add(this.bConnect);
             this.Controls.Add(this.clientTextBox);
             this.Name = "ClientForm";
