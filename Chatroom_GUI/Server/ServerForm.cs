@@ -18,9 +18,13 @@ namespace Chatroom_GUI
 {
     public partial class ServerForm : Form, Custom_Interfaces.ISubject
     {
+        private Dictionary<int, IObserver> users;
+        private int userNumber;
         public ServerForm()
         {
             InitializeComponent();
+            users = new Dictionary<int, IObserver>();
+            userNumber = 0;
         }
 
         private void ServerForm_Load(object sender, EventArgs e)
@@ -69,6 +73,31 @@ namespace Chatroom_GUI
                 return 0;
             };
             Invoke(del); // Idk why i make a delegate for it.
+        }
+
+        public void AddObserver(IObserver observer)
+        {
+            userNumber++;
+            users.Add(userNumber, observer);
+        }
+
+        public void RemoveObserver(int userKey)
+        {
+            if (users.TryGetValue(userKey, out IObserver user))
+            {
+                string name = user.GetName();
+                users.Remove(userKey);
+                UpdateUI("Removed user: " + name);
+            }
+            else
+            {
+                UpdateUI("Could not find user with key: " + userKey);
+            }
+        }
+
+        public void NotifyObservers()
+        {
+            throw new NotImplementedException();
         }
 
         /* For learning purposes only
