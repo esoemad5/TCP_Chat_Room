@@ -47,7 +47,7 @@ namespace Chatroom_GUI
             while (true)
             {
                 TcpClient client = tcpListener.AcceptTcpClient(); // Thread will wait here until a client tries to connect.
-                UpdateUI("Connected!");
+                //AddObserver(client); //help
                 Thread tcpHandlerThread = new Thread(() => TcpHandler(client)); // Devote a thread to handle the actions of a client
                 tcpHandlerThread.Start(); // Used to use client as an argument and got an exception. This works. Why????
             }
@@ -79,6 +79,7 @@ namespace Chatroom_GUI
         {
             userNumber++;
             users.Add(userNumber, observer);
+            UpdateUI("User Added: " + observer.GetName());
         }
 
         public void RemoveObserver(int userKey)
@@ -87,7 +88,7 @@ namespace Chatroom_GUI
             {
                 string name = user.GetName();
                 users.Remove(userKey);
-                UpdateUI("Removed user: " + name);
+                UpdateUI("Removed User: " + name);
             }
             else
             {

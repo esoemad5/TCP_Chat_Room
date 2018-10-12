@@ -18,10 +18,12 @@ namespace Client
     public partial class ClientForm : Form, Custom_Interfaces.IObserver
     {
         private bool isConnected;
+        private string name;
         public ClientForm()
         {
             InitializeComponent();
             isConnected = false;
+            name = "Un-nammed User";
         }
 
         private void ClientForm_Load(object sender, EventArgs e)
@@ -72,6 +74,16 @@ namespace Client
                 return 0;
             };
             Invoke(del); // Idk why i make a delegate for it.
+        }
+
+        public void Update(string newUsersName)
+        {
+            UpdateUI("New user has joined the chat: " + newUsersName);
+        }
+
+        public string GetName()
+        {
+            return name;
         }
     }
 }
