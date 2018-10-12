@@ -11,10 +11,11 @@ using System.Net.Sockets;
 using System.Net;
 using System.IO;
 using System.Threading;
+using Custom_Interfaces;
 
 namespace Client
 {
-    public partial class ClientForm : Form
+    public partial class ClientForm : Form, Custom_Interfaces.IObserver
     {
         private bool isConnected;
         public ClientForm()

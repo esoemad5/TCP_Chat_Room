@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interfaces_ThisIsAClassLibrary_bool_IsThatIncorrect\Custom_Interfaces.csproj">
+      <Project>{4b4d0f2b-e3df-4c9c-97c1-d5b947931d55}</Project>
+      <Name>Custom_Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

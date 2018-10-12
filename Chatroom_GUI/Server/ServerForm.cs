@@ -11,10 +11,12 @@ using System.Threading;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using Custom_Interfaces;
+
 
 namespace Chatroom_GUI
 {
-    public partial class ServerForm : Form
+    public partial class ServerForm : Form, Custom_Interfaces.ISubject
     {
         public ServerForm()
         {
@@ -49,7 +51,6 @@ namespace Chatroom_GUI
 
         private void TcpHandler(TcpClient client)
         {
-            //TcpClient client = (TcpClient)client_;
             NetworkStream stream = client.GetStream(); // Make a stream for the server to listen to the client
             byte[] byteMessage = new byte[1024];
             stream.Read(byteMessage, 0, byteMessage.Length);
