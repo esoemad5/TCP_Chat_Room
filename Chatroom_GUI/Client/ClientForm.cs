@@ -16,9 +16,11 @@ namespace Client
 {
     public partial class ClientForm : Form
     {
+        private bool isConnected;
         public ClientForm()
         {
             InitializeComponent();
+            isConnected = false;
         }
 
         private void ClientForm_Load(object sender, EventArgs e)
@@ -34,10 +36,15 @@ namespace Client
 
         private void ConnectAsClient()
         {
+            if (this.isConnected) // TODO: How to check when the client is disconnected so it can re-connect?
+            {
+                return;
+            }
             TcpClient client = new TcpClient(); // Make a client
             try
             {
-                client.Connect(IPAddress.Parse("192.168.0.130"), 5001); // Connect to the server. The server's address is my IP address since the server is running on my machine. Port is 0 because local stuff. Should be some number >5000 for multi-computer use???
+                client.Connect(IPAddress.Parse("192.168.0.124"), 5001); // Connect to the server. The server's address is my IP address since the server is running on my machine. Port is 0 because local stuff. Should be some number >5000 for multi-computer use???
+                this.isConnected = true;
             }
             catch (SocketException)
             {

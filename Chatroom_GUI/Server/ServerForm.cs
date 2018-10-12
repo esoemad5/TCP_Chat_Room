@@ -43,7 +43,7 @@ namespace Chatroom_GUI
                 TcpClient client = tcpListener.AcceptTcpClient(); // Thread will wait here until a client tries to connect.
                 UpdateUI("Connected!");
                 Thread tcpHandlerThread = new Thread(() => TcpHandler(client)); // Devote a thread to handle the actions of a client
-                tcpHandlerThread.Start(client);
+                tcpHandlerThread.Start(); // Used to use client as an argument and got an exception. This works. Why????
             }
         }
 
