@@ -63,8 +63,7 @@ namespace Client
             //serverStream.Write(byteMessage, 0, message.Length);
             ////Thread.Sleep(1000);
             //byteMessage = new byte[1024];
-            //serverStream.Read(byteMessage, 0, byteMessage.Length);
-            //UpdateUI("New Message: " + Encoding.ASCII.GetString(byteMessage));
+
 
 
             // Responsible coding.
@@ -76,6 +75,9 @@ namespace Client
         {
             byte[] byteMessage = Encoding.ASCII.GetBytes(message); // Convert the message to a byte[] because NetworkStreams are picky like that.
             serverStream.Write(byteMessage, 0, message.Length); // Send the message.
+
+            serverStream.Read(byteMessage, 0, byteMessage.Length);
+            UpdateUI("New Message: " + Encoding.ASCII.GetString(byteMessage));
         }
 
         private void bSend_Click(object sender, EventArgs e)

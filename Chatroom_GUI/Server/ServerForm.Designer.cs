@@ -49,6 +49,7 @@
             this.serverTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.serverTextBox.Multiline = true;
             this.serverTextBox.Name = "serverTextBox";
+            this.serverTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.serverTextBox.Size = new System.Drawing.Size(1040, 653);
             this.serverTextBox.TabIndex = 1;
             // 

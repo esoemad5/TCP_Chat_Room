@@ -41,6 +41,7 @@
             this.clientTextBox.Multiline = true;
             this.clientTextBox.Name = "clientTextBox";
             this.clientTextBox.ReadOnly = true;
+            this.clientTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.clientTextBox.Size = new System.Drawing.Size(790, 474);
             this.clientTextBox.TabIndex = 0;
             // 
@@ -58,6 +59,7 @@
             // clientMessageBox
             // 
             this.clientMessageBox.Location = new System.Drawing.Point(18, 500);
+            this.clientMessageBox.MaxLength = 64;
             this.clientMessageBox.Name = "clientMessageBox";
             this.clientMessageBox.Size = new System.Drawing.Size(790, 26);
             this.clientMessageBox.TabIndex = 2;

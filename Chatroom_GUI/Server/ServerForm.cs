@@ -58,11 +58,20 @@ namespace Chatroom_GUI
             NetworkStream stream = client.GetStream(); // Make a stream for the server to listen to the client
             byte[] byteMessage = new byte[1024];
             stream.Read(byteMessage, 0, byteMessage.Length);
+            for(int i = 0; i < 15; i++)
+            {
+                UpdateUI(byteMessage[i].ToString());
+            }
             UpdateUI("New Message: " + Encoding.ASCII.GetString(byteMessage));
 
             string message = "Message Recieved";
             byteMessage = Encoding.ASCII.GetBytes(message);
             stream.Write(byteMessage, 0, message.Length);
+            stream.Read(byteMessage, 0, byteMessage.Length);
+            for (int i = 0; i < 15; i++)
+            {
+                UpdateUI(byteMessage[i].ToString());
+            }
 
             // Stay green bb
             //stream.Close();
