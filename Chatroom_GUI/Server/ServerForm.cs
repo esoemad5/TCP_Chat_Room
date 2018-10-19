@@ -29,7 +29,7 @@ namespace Chatroom_GUI
 
         private void ServerForm_Load(object sender, EventArgs e)
         {
-
+            serverTextBox.AppendText("Hello World!");
         }
 
         private void bStartServer_Click(object sender, EventArgs e)
@@ -60,16 +60,20 @@ namespace Chatroom_GUI
             stream.Read(byteMessage, 0, byteMessage.Length);
             UpdateUI("New Message: " + Encoding.ASCII.GetString(byteMessage));
 
+            string message = "Message Recieved";
+            byteMessage = Encoding.ASCII.GetBytes(message);
+            stream.Write(byteMessage, 0, message.Length);
+
             // Stay green bb
-            stream.Close();
-            client.Close();
+            //stream.Close();
+            //client.Close();
         }
 
         private void UpdateUI(string message)
         {
             Func<int> del = delegate ()
             {
-                serverTextBox.AppendText(message + System.Environment.NewLine); // this makes sense
+                serverTextBox.AppendText(System.Environment.NewLine + message); // this makes sense
                 return 0;
             };
             Invoke(del); // Idk why i make a delegate for it.
