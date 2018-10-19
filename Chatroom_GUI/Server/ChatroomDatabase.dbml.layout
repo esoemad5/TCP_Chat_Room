@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ChatroomDatabase">
+  <DataContextMoniker Name="/ChatroomDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6fcf3706-9d5c-4468-aff2-049e7c512366" absoluteBounds="0.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/ChatroomDatabaseDataContext/MessageData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a0f0c70-5de6-4584-9b3c-4e354e74c52f" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19eef00d-eb2c-4cbc-9726-38b6ccd4297f" absoluteBounds="3.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ChatroomDatabaseDataContext/Notification" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b3c1316-8c2e-461b-8481-6b7c5b678157" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
