@@ -27,9 +27,7 @@ namespace Client
             isConnected = false;
             name = "Un-nammed User";
         }
-
         
-
         private void bConnect_Click(object sender, EventArgs e)
         {
             Thread clientThread = new Thread(ConnectAsClient);
@@ -55,24 +53,24 @@ namespace Client
             }
             serverStream = client.GetStream(); // Point the stream at the server (I'm sure theres a better way to describe this)
 
-            string message = "Hello World!"; // Message the client wants to send. This line will be a method call or something so clients can type their own messages.
-            byte[] byteMessage = Encoding.ASCII.GetBytes(message); // Convert the message to a byte[] because NetworkStreams are picky like that.
-            serverStream.Write(byteMessage, 0, message.Length); // Send the message.
-            UpdateUI("Message sent!"); // Confirmation.
-            message = "qqqqqqqqqqqqqqqqqqqqqqqq";
-            byteMessage = Encoding.ASCII.GetBytes(message);
-            serverStream.Write(byteMessage, 0, message.Length);
-            //Thread.Sleep(1000);
-            byteMessage = new byte[1024];
-            serverStream.Read(byteMessage, 0, byteMessage.Length);
-            UpdateUI("New Message: " + Encoding.ASCII.GetString(byteMessage));
+            //string message = "Hello World!"; // Message the client wants to send. This line will be a method call or something so clients can type their own messages.
+            //SendMessageToServer(message);
+            //UpdateUI("Message sent!"); // Confirmation.
+
+
+            //message = "qqqqqqqqqqqqqqqqqqqqqqqq";
+            //byteMessage = Encoding.ASCII.GetBytes(message);
+            //serverStream.Write(byteMessage, 0, message.Length);
+            ////Thread.Sleep(1000);
+            //byteMessage = new byte[1024];
+            //serverStream.Read(byteMessage, 0, byteMessage.Length);
+            //UpdateUI("New Message: " + Encoding.ASCII.GetString(byteMessage));
 
 
             // Responsible coding.
             //serverStream.Close();
             //client.Close();
         }
-
         
         private void SendMessageToServer(string message)
         {
