@@ -11,3 +11,6 @@ C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\bin\Debug\I
 C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\bin\Debug\Interfaces_ThisIsAClassLibrary_bool_IsThatIncorrect.pdb
 C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\obj\Debug\Client.csprojAssemblyReference.cache
 C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\bin\Debug\Chatroom_GUI.exe
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\bin\Debug\Chatroom_GUI.pdb
+C:\Users\eriyg\Desktop\devCodeCamp\TCP_Chat_Room\Chatroom_GUI\Client\bin\Debug\Chatroom_GUI.exe.config

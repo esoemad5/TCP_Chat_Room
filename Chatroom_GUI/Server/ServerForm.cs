@@ -20,6 +20,8 @@ namespace Chatroom_GUI
     {
         private Dictionary<int, IObserver> users;
         private int userNumber;
+
+        private ChatroomDatabaseDataContext db = new ChatroomDatabaseDataContext();
         public ServerForm()
         {
             InitializeComponent();

@@ -19,8 +19,10 @@ namespace Client
     {
         private bool isConnected;
         private string name;
-        NetworkStream serverStream;
-        TcpClient client;
+        private NetworkStream serverStream;
+        private TcpClient client;
+
+        private ChatroomDatabaseDataContext db = new ChatroomDatabaseDataContext();
         public ClientForm()
         {
             InitializeComponent();
@@ -82,7 +84,8 @@ namespace Client
 
         private void bSend_Click(object sender, EventArgs e)
         {
-            SendMessageToServer(clientMessageBox.Text);
+            //SendMessageToServer(clientMessageBox.Text);
+            UpdateUI(db.MessageDatas.Where(m => true).ToArray().Last().Content);
         }
 
         private void UpdateUI(string incommingMessage)
