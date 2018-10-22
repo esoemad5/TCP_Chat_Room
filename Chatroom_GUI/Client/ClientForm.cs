@@ -19,7 +19,7 @@ namespace Client
     {
         private bool isConnected;
         private string name;
-        private NetworkStream serverStream;
+        //private NetworkStream serverStream;
         private TcpClient client;
 
         private ChatroomDatabaseDataContext db = new ChatroomDatabaseDataContext();
@@ -45,7 +45,7 @@ namespace Client
             client = new TcpClient(); // Make a client
             try
             {
-                client.Connect(IPAddress.Parse("192.168.0.124"), 5001); // Connect to the server. The server's address is my IP address since the server is running on my machine. Port is 0 because local stuff. Should be some number >5000 for multi-computer use???
+                client.Connect(IPAddress.Parse("192.168.0.120"), 5001); // Connect to the server with my IP. Run ipconfig to find it
                 this.isConnected = true;
             }
             catch (SocketException)
@@ -53,7 +53,7 @@ namespace Client
                 UpdateUI("No server found :(");
                 return;
             }
-            serverStream = client.GetStream(); // Point the stream at the server (I'm sure theres a better way to describe this)
+            //serverStream = client.GetStream(); // Point the stream at the server (I'm sure theres a better way to describe this)
 
             //string message = "Hello World!"; // Message the client wants to send. This line will be a method call or something so clients can type their own messages.
             //SendMessageToServer(message);
@@ -75,16 +75,23 @@ namespace Client
         
         private void SendMessageToServer(string message)
         {
-            byte[] byteMessage = Encoding.ASCII.GetBytes(message); // Convert the message to a byte[] because NetworkStreams are picky like that.
-            serverStream.Write(byteMessage, 0, message.Length); // Send the message.
+            //byte[] byteMessage = Encoding.ASCII.GetBytes(message); // Convert the message to a byte[] because NetworkStreams are picky like that.
+            //serverStream.Write(byteMessage, 0, message.Length); // Send the message.
 
-            serverStream.Read(byteMessage, 0, byteMessage.Length);
-            UpdateUI("New Message: " + Encoding.ASCII.GetString(byteMessage));
+            //serverStream.Read(byteMessage, 0, byteMessage.Length);
+            //UpdateUI("New Message: " + Encoding.ASCII.GetString(byteMessage));
         }
 
         private void bSend_Click(object sender, EventArgs e)
         {
             //SendMessageToServer(clientMessageBox.Text);
+            MessageData message = new MessageData();
+            message.Author = name;
+            message.Recipient = "All users";
+            message.Content = clientMessageBox.Text;
+            message.TimeSent = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(); // awkward but works
+            db.MessageDatas.InsertOnSubmit(message);
+            db.SubmitChanges();
             UpdateUI(db.MessageDatas.Where(m => true).ToArray().Last().Content);
         }
 
@@ -117,7 +124,7 @@ namespace Client
         //Might need this later
         private void OnExit()
         {
-            serverStream.Close();
+            //serverStream.Close();
             client.Close();
         }
 
