@@ -16,7 +16,7 @@ using Custom_Interfaces;
 
 namespace Chatroom_GUI
 {
-    public partial class ServerForm : Form, Custom_Interfaces.ISubject
+    public partial class ServerForm : Form // ISubject in partial class below
     {
         private Dictionary<int, IObserver> users;
         private int userNumber;
@@ -90,6 +90,29 @@ namespace Chatroom_GUI
             Invoke(del); // Idk why i make a delegate for it.
         }
 
+        
+        
+
+        
+
+        /* For learning purposes only
+         * When TcpHandler parameter is 'TcpClient client' this breaks. When it is 'Object client' it works.
+        delegate void Test(TcpClient c);
+        private void DelegateMethod()
+        {
+            Test test;
+            test = new Test(TcpHandler);
+
+            Thread __tcpHandlerThread = new Thread(test);
+            Thread _______tcpHandlerThread = new Thread(() => ThreadStart(test));
+            Thread _tcpHandlerThread = new Thread(new ParameterizedThreadStart(test));
+            Thread tcpHandlerThread = new Thread(new ThreadStart(tcpHandler(client)));
+        }
+        */
+    }
+
+    public partial class ServerForm : Custom_Interfaces.ISubject
+    {
         public void AddObserver(IObserver observer)
         {
             userNumber++;
@@ -115,20 +138,5 @@ namespace Chatroom_GUI
         {
             throw new NotImplementedException();
         }
-
-        /* For learning purposes only
-         * When TcpHandler parameter is 'TcpClient client' this breaks. When it is 'Object client' it works.
-        delegate void Test(TcpClient c);
-        private void DelegateMethod()
-        {
-            Test test;
-            test = new Test(TcpHandler);
-
-            Thread __tcpHandlerThread = new Thread(test);
-            Thread _______tcpHandlerThread = new Thread(() => ThreadStart(test));
-            Thread _tcpHandlerThread = new Thread(new ParameterizedThreadStart(test));
-            Thread tcpHandlerThread = new Thread(new ThreadStart(tcpHandler(client)));
-        }
-        */
     }
 }
