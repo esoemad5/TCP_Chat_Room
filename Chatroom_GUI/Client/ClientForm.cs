@@ -21,6 +21,7 @@ namespace Client
         private string name;
         //private NetworkStream serverStream;
         private TcpClient client;
+        private int lastMessageRead;
 
         private ChatroomDatabaseDataContext db = new ChatroomDatabaseDataContext();
         public ClientForm()
@@ -97,10 +98,9 @@ namespace Client
 
         private void UpdateUI(string incommingMessage)
         {
-            Func<int> del = delegate ()
+            Action del = delegate ()
             {
                 clientTextBox.AppendText(System.Environment.NewLine + incommingMessage); // this makes sense
-                return 0;
             };
             Invoke(del);
             /* Idk why i make a delegate for it.
