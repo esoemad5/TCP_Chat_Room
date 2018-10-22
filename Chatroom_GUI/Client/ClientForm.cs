@@ -29,6 +29,7 @@ namespace Client
             InitializeComponent();
             isConnected = false;
             name = "Un-nammed User";
+            lastMessageRead = db.MessageDatas.ToArray().Last().ID;
         }
         
         private void bConnect_Click(object sender, EventArgs e)
@@ -93,14 +94,18 @@ namespace Client
             message.TimeSent = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(); // awkward but works
             db.MessageDatas.InsertOnSubmit(message);
             db.SubmitChanges();
-            UpdateUI(db.MessageDatas.Where(m => true).ToArray().Last().Content);
+            UpdateUI(db.MessageDatas.Where(m => m.ID > lastMessageRead).ToArray());
         }
 
-        private void UpdateUI(string incommingMessage)
+        private void UpdateUI(MessageData[] incommingMessages)
         {
             Action del = delegate ()
             {
-                clientTextBox.AppendText(System.Environment.NewLine + incommingMessage); // this makes sense
+                foreach(MessageData message in incommingMessages)
+                {
+                    clientTextBox.AppendText(System.Environment.NewLine + message.Content); // this makes sense
+                    lastMessageRead = message.ID;
+                }
             };
             Invoke(del);
             /* Idk why i make a delegate for it.
@@ -109,6 +114,14 @@ namespace Client
              * 'Cross-thread operation not valid:
              * Control 'clientTextBox' accessed from a thread other than the thread it was created on.'
              */
+        }
+        private void UpdateUI(string message)
+        {
+            Action del = delegate ()
+            {
+                clientTextBox.AppendText(System.Environment.NewLine + message); 
+            };
+            Invoke(del);
         }
 
         public void Update(string newUsersName)
