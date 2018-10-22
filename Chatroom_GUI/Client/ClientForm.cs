@@ -75,26 +75,20 @@ namespace Client
             //client.Close();
         }
         
-        private void SendMessageToServer(string message)
+        private void SendMessageToServer(string content, string recipient)
         {
-            //byte[] byteMessage = Encoding.ASCII.GetBytes(message); // Convert the message to a byte[] because NetworkStreams are picky like that.
-            //serverStream.Write(byteMessage, 0, message.Length); // Send the message.
-
-            //serverStream.Read(byteMessage, 0, byteMessage.Length);
-            //UpdateUI("New Message: " + Encoding.ASCII.GetString(byteMessage));
+            MessageData messageData = new MessageData();
+            messageData.Author = name;
+            messageData.Recipient = recipient;
+            messageData.Content = content;
+            messageData.TimeSent = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(); // awkward but works
+            db.MessageDatas.InsertOnSubmit(messageData);
+            db.SubmitChanges();
         }
 
         private void bSend_Click(object sender, EventArgs e)
         {
-            //SendMessageToServer(clientMessageBox.Text);
-            MessageData message = new MessageData();
-            message.Author = name;
-            message.Recipient = "All users";
-            message.Content = clientMessageBox.Text;
-            message.TimeSent = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(); // awkward but works
-            db.MessageDatas.InsertOnSubmit(message);
-            db.SubmitChanges();
-            UpdateUI(db.MessageDatas.Where(m => m.ID > lastMessageRead).ToArray());
+            SendMessageToServer(clientMessageBox.Text, "All users");
         }
 
         private void UpdateUI(MessageData[] incommingMessages)
